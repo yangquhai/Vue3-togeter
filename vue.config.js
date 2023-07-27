@@ -3,8 +3,8 @@ module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave:false,
   devServer: {
-    host: '192.168.1.186', // can be overwritten by process.env.HOST
-    // host: 'localhost',
+    // host: '192.168.1.186', // can be overwritten by process.env.HOST
+    host: 'localhost',
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     // open: true,// vue项目启动时自动打开浏览器
     proxy: {

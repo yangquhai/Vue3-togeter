@@ -1,20 +1,19 @@
 <template>
-  <div class="homes">
-    <div class="top">1231</div>
-    <search></search>
+  <div class="home">
+    <search :placeholders="placeholders"></search>
+    <calender></calender>
   </div>
 </template>
 
-<script>
+<script setup>
 import api from '../api/api'
+import {ref,onMounted} from 'vue'
 import search from '../components/search.vue'
-export default {
-  name: 'HomeView',
-  components: {
-    search
-  },
-  methods:{
-    async getData2(){
+import calender from '../components/calender.vue'
+let tabListData = ref([])
+let value = ref('')
+let placeholders = ref('')
+const getData = async()=> {
         let formData = new FormData()
         formData.append('Ttablename','bxd_main')
         formData.append('Turl','bxd.aspx')
@@ -22,24 +21,22 @@ export default {
         formData.append('Tsystem_lcmc','报销单')
         formData.append('TisFirst','1')
         let data = await api.getDropData(formData)
-        console.log(data)
-      },
-  },
-  onMounted(){
-    this.getData2()
-  }
+        tabListData = data.colums
+        placeholders.value = tabListData.search.text
+        console.log(tabListData)
 }
+onMounted(()=>{
+  getData()
+  console.log('onMounted')
+})
 </script>
 <style lang="scss" scoped>
-   .homes {
+   .home {
       // margin-top: 8px;
-      padding-top: 9px;
-      margin-left: 9px;
-      display: flex;
-      align-items: center;
-      // border: solid 1px red;
-      .top {
-        border: solid 1px red;
-      }
+      // padding-top: 9px;
+      // margin-left: 9px;
+      // display: flex;
+      // align-items: center;
+      border: solid 1px red;
     }
 </style>

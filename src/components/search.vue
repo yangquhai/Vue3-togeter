@@ -1,55 +1,43 @@
 <template>
-    <div>
-      <!-- <form action="/">
-          <van-search
-              v-model="value"
-              :placeholder="placeholders"
-              @search="onSearch"
-              @cancel="onCancel"
-              shape="round"
-          />
-      </form> -->
-      <van-button type="primary">主要按钮</van-button>
-      123213
-    </div>
-  </template>
+ <form action="/">
+    <van-search
+        v-model="value"
+        show-action
+        :placeholder="placeholders"
+        @search="onSearch"
+        @cancel="onCancel"
+    />
+ </form>
+</template>
   
-  <script>
-  export default {
-      data(){
-          return {
-              value: '',
-          }
-      },
-      props:["placeholder"],
-      computed:{
-          placeholders(){
-              return this.placeholder
-          }
-      },
-      methods:{
-          onSearch(){
-              console.log(this.placeholder)
-              // console.log(this.value)
-              this.$emit('search',this.value)
-          },
-          onCancel(){
-              console.log(222)
-          }
-      },
-      created(){
-          // console.log(this.placeholder)
+<script setup>
+import {ref} from 'vue'
+
+const props = defineProps({
+  placeholders: String
+})
+let value = ref('')
+// let placeholders = ref('123123')
+const onSearch = () => {
+    console.log(value.value)
+}
+const onCancel = ()=> {
+   console.log(value.value)
+}
+console.log(props.placeholders)
+</script>
+
+
+<style lang="scss" scoped>
+      :deep(){
+        van-field__control::-webkit-input-placeholder {
+          // color: rgba(95, 100, 110, 1);
+          font-size: 12px;
       }
-  }
-  </script>
-  
-  <style lang="scss" scoped>
-    //   /deep/ .van-field__control::-webkit-input-placeholder {
-    //       // color: rgba(95, 100, 110, 1);
-    //       font-size: 12px;
-    //   }
-    //   /deep/ .van-field__control {
-    //       // border: solid 1px red;
-    //       font-size: 12px;
-    //   }
-  </style>
+      .van-field__control {
+          // border: solid 1px red;
+          font-size: 12px;
+      }
+      }
+
+</style>
