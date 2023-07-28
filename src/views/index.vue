@@ -31,12 +31,12 @@ onMounted(()=>{
 })
 </script>
 <style lang="scss" scoped>
-   .home {
-      // margin-top: 8px;
-      // padding-top: 9px;
-      // margin-left: 9px;
-      // display: flex;
-      // align-items: center;
-      border: solid 1px red;
-    }
+  //  .home {
+  //     margin-top: 8px;
+  //     padding-top: 9px;
+  //     margin-left: 9px;
+  //     display: flex;
+  //     align-items: center;
+  //     border: solid 1px red;
+  //   }
 </style>

@@ -9,8 +9,8 @@ axios.defaults.baseURL = '/api'
 // 返回状态判断(请求拦截器)
 axios.interceptors.request.use(
     config=>{
-    document.cookie = 'anywell_ajax_token=20230724172651348598'
-    document.cookie = ".ASPXANONYMOUS=NL04IrYXI-ssGgYU25MWm_XE_8Dc1XmkC6-69jaREOZMwJfW8lcKgBxZJ-Z0H8Dcs3Z69P3HenMdANDVSw2OAIESDYIpNnCXlYHis4o-CaMbIYUp9GewdafrTzZszHUQ1WR81enpi6ItJnwDFipF5Q2"
+    document.cookie = 'anywell_ajax_token=2023072812212943983'
+    document.cookie = ".ASPXANONYMOUS=aGkrNR1hIwiIlB8eA64nrqbfwjRyD09R7OpQ9PP1dH5ksIO8NpE91V-RMplOi7gGe1p3mH_aXIbKSI9UpxU27jfCK51R05p4Dm1D3fDrVJpUe"
     document.cookie = "ASP.NET_SessionId=p5mezybsvczsx3ajulyvqbqz"
     
     // 发送请求前需要做的事
