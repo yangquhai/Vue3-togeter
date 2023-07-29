@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <search :placeholders="placeholders"></search>
+    <search :placeholders="placeholders" @changeMoney="changeMoney"></search>
     <calender></calender>
   </div>
 </template>
@@ -11,7 +11,7 @@ import {ref,onMounted} from 'vue'
 import search from '../components/search.vue'
 import calender from '../components/calender.vue'
 let tabListData = ref([])
-let value = ref('')
+let value = ref('1')
 let placeholders = ref('')
 const getData = async()=> {
         let formData = new FormData()
@@ -25,8 +25,12 @@ const getData = async()=> {
         placeholders.value = tabListData.search.text
         console.log(tabListData)
 }
+const changeMoney = (value)=> {
+  console.log(value)
+}
+console.log(value.value)
+getData()
 onMounted(()=>{
-  getData()
   console.log('onMounted')
 })
 </script>

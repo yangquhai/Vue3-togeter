@@ -8,6 +8,7 @@
         @cancel="onCancel"
     />
  </form>
+ <div @click="father">123132131</div>
 </template>
   
 <script setup>
@@ -16,15 +17,21 @@ import {ref} from 'vue'
 const props = defineProps({
   placeholders: String
 })
+console.log(props)
 let value = ref('')
+let value2 = ref('1231321')
 // let placeholders = ref('123123')
 const onSearch = () => {
     console.log(value.value)
+    console.log(props.placeholders)
 }
 const onCancel = ()=> {
    console.log(value.value)
 }
-console.log(props.placeholders)
+const emits = defineEmits(['changeMoney'])
+const father = () => {
+  emits('changeMoney',value2.value)
+}
 </script>
 
 

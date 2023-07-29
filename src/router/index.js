@@ -3,7 +3,7 @@ import index from '../views/index.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/Ttablename=bxd_main/Turl=bxd.aspx/Tformnamecn=4366/Tsystem_lcmc=123',
     name: 'index',
     component: index
   },
