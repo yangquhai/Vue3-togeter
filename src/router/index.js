@@ -1,11 +1,31 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import index from '../views/index.vue'
+import zhibo from '../views/zhibo.vue'
+import admin from '../views/admin.vue'
 
 const routes = [
   {
-    path: '/Ttablename=bxd_main/Turl=bxd.aspx/Tformnamecn=4366/Tsystem_lcmc=123',
+    path: '/',
     name: 'index',
     component: index
+  },
+  {
+    path: '/zhibo',
+    name: 'zhibo',
+    component: zhibo,
+    beforeEnter: (to, from, next) => {
+      document.title = '直播' // 根据页面状态设置标题
+      next()
+  }
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: admin,
+    beforeEnter: (to, from, next) => {
+      document.title = '后台管理' // 根据页面状态设置标题
+      next()
+  }
   },
 ]
 

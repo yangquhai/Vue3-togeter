@@ -3,9 +3,9 @@
       <div class="calendar">
           <div class="calelist" style="display:flex">
               <van-cell title="从" :value="date" @click="value1 = true" />
-              <van-calendar v-model:value1="value1" :show-confirm="false" @confirm="onConfirm" :min-date="minDate" :max-date="maxDate" />
+              <van-calendar v-model:show="value1" :show-confirm="false" @confirm="onConfirm" :min-date="minDate" :max-date="maxDate" />
               <van-cell title="至" class="van-cell2" :value="date2" @click="value2 = true" />
-              <van-calendar v-model="value2" :show-confirm="false" @confirm="onConfirm2" :min-date="minDate" :max-date="maxDate" />
+              <van-calendar v-model:show="value2" :show-confirm="false" @confirm="onConfirm2" :min-date="minDate" :max-date="maxDate" />
           </div>
       </div>
     </div>
@@ -15,7 +15,7 @@
 import {ref} from 'vue'
 const date = ref('请选择日期')
 const date2 = ref('请选择日期')
-const value1 = ref(true)
+const value1 = ref(false)
 const value2 = ref(false)
 let minDate = ref(new Date(2020, 0, 1)) 
 let maxDate = ref(new Date(2025, 0, 1)) 
@@ -40,7 +40,7 @@ const onConfirm = (date) => {
 const onConfirm2=(date)=> {
          value2.value = false;
          date2.value = getSimpleDate(date);
-         console.log(date2)
+         console.log(date2.value)
 }
   </script>
   
