@@ -44,7 +44,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="home">
+  <!-- <div class="home">
     <search :placeholders="placeholders" @changeMoney="changeMoney"></search>
     <calender></calender>
   </div>
@@ -53,7 +53,8 @@ onMounted(() => {
   </div>
   <div class="border2">
     <div class="content">1111</div>
-  </div>
+  </div> -->
+  <div>111</div>
 </template>
 
 

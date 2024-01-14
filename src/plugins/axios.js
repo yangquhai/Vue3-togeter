@@ -4,9 +4,9 @@ import axios from "axios";
 
 axios.defaults.timeout = 5000  // 接口响应时间
 // axios.defaults.baseURL = 'https://mock.apifox.cn/m1/1014400-0-default'  // 接口地址
-// axios.defaults.baseURL = 'http://media.yqqnas.fun:180'
+axios.defaults.baseURL = 'http://media.yqqnas.fun:180'
 // axios.defaults.baseURL = 'https://api.fireopen.cn'
-axios.defaults.baseURL = '/apis'
+// axios.defaults.baseURL = '/apis'
 // 返回状态判断(请求拦截器)
 axios.interceptors.request.use(
     config => {

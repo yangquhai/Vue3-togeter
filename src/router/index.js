@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import index from '../views/index.vue'
-import zhibo from '../views/zhibo.vue'
+import live from '../views/zhibo.vue'
 import admin from '../views/admin.vue'
 
 const routes = [
@@ -10,9 +10,9 @@ const routes = [
     component: index
   },
   {
-    path: '/zhibo',
-    name: 'zhibo',
-    component: zhibo,
+    path: '/live',
+    name: 'live',
+    component: live,
     beforeEnter: (to, from, next) => {
       document.title = '直播' // 根据页面状态设置标题
       next()

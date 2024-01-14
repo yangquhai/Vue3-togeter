@@ -15,11 +15,11 @@ export default {
     // },
 
 
-    async getZhiBo() {
+    async getZhiBo(Data) {
         let { data } = await axios({
-            // url: '/personal/personalIndex',
             url: '/api',
             method: 'GET',
+            params:Data
         });
         return data
     },
